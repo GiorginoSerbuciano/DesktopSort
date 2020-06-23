@@ -1,7 +1,7 @@
 #t_textRead
 tags = []
 
-tagFile = open('tagfile.txt','r')
+tagFile = open('Tests/tagfile.txt','r')
 for line in tagFile:
     tagList = tagFile.readlines()
     print(tagList)
