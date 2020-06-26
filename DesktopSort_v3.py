@@ -1,14 +1,13 @@
 import os
 import shutil
 
-sortDir_1 = 'C:\\A_SERBAN\\LEUPHANA STUDIES\\MINOR PHILOSOPHY\\A_sort\\%s'
-sortDir_2 = 'C:\\A_SERBAN\\LEUPHANA STUDIES\\MAJOR DIGITAL MEDIA\\B_sort\\%s'
-sortDirList = [sortDir_1,sortDir_2]
-print(sortDirList) #testing feature
+sortDirFile = open('sortDirs.txt', 'r')
+sortDirList = sortDirFile.read().splitlines()
+print(sortDirList) #test
 
 tagList = ['A_','B_'] #for loop!
 
-fileDir = 'Files\\%s'
+fileDir = 'C:\\Users\\Serban\\Desktop\\%s'
 fileList = os.scandir(fileDir %(''))
 nameList = [] #this list is read for the file names scanned in os.scandir(fileDir)
 
@@ -19,16 +18,17 @@ for item in fileList: #for every item resulting from os.scandir(fileDir)...
 		nameList.append(item.name)
 
 for sortDir in sortDirList:
-	if sortDir == sortDir_1:
+	if sortDir == sortDirList[0]:
 		for fileName in nameList: #reads every item in the list defined at the top
 			if fileName.__contains__(tagList[0]): #tags and directories should be user-definable without having to edit the source code
-				shutil.move(fileDir %(fileName), sortDir_1 %(fileName))
+				shutil.move(fileDir %(fileName), sortDirList[0] %(fileName))
 				print(fileName) #testing feature
-	elif sortDir == sortDir_2:
+	elif sortDir == sortDirList[1]:
 		for fileName in nameList:
 			if fileName.__contains__(tagList[1]): #the program should check filenames for as many tags as there are tags; therefore, it should be able to 'generate' an elif (or something similar) for every tag
-				shutil.move(fileDir %(fileName), sortDir_2 %(fileName))
+				shutil.move(fileDir %(fileName), sortDirList[1] %(fileName))
 				print(fileName) #testing feature
+    
 
 
 
