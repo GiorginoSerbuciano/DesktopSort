@@ -1,9 +1,12 @@
-DESKTOPSORT v1.0 // 28.06.2020 
-DESKTOPSORT v2.0 // 04.09.2020
+import os
 
-DESKTOPSORT is an automatic file sorting program built in Python 3.8.2. 
-It relies on recognizing user-determined tags at the beginning of file names.
-For more information, visit https://github.com/GiorginoSerbuciano/DesktopSort (Clickable URL in README.txt)
+print('DESKTOPSORT v1.0 - 28.06.2020\nDESKTOPSORT v2.0 - 04.09.2020')   
+
+print('DESKTOPSORT is an automatic file sorting program built in Python 3.8.2.\n'
+'It relies on recognizing user-determined tags at the beginning of file names.\n'
+'For more information, visit https://github.com/GiorginoSerbuciano/DesktopSort (Clickable URL in README.txt)\n')
+
+print('DESKTOPSORT 2020 DEVELOPED FOR EDUCATIONAL PURPOSES AT HAMBURG MEDIA SCHOOL\n')
 
 input('Press ENTER to begin the tutorial, or close this window to abandon the program... (You can read the instructions at any time in README.txt.)\n')
 
@@ -43,26 +46,3 @@ input('Congratulations! If everything went well, DESKTOPSORT should now be ready
 '~GiorginoSerbuciano\n'
 'Press ENTER to end the tutorial...')
 
-
-DESKTOPSORT 2020 DEVELOPED FOR EDUCATIONAL PURPOSES AT HAMBURG MEDIA SCHOOL
-
-CAUTIONS:
-* Choose tags which are not common combinations of letters and symbols. If you use e.g. "do" as a tag, any items whose names contain it, such as "door.txt" or "Windows" will be moved by accident. Tags such as "1_" or "AB!" should not cause this program.
-* USE THIS PROGRAM WITH CARE, pointing it only at directories where you are sure no important files will be lost, as it has no failsafe for displacing system files, nor for overwriting files. 
-* Tags are case sensitive.
-
-LIMITATIONS as of v1.0:
-* Number of tags and sorting directories is currently limited to TWO.
-* The program must be run every time the user wishes to sort their files.
-* There is no interface.
-
-NOTES ON PROGRAM VARIABLES:
-tag_text: Textfile containing tags
-tag_list: List containing tags from tag_text
-DESTINATION DIRECTORIES:
-to_text: Textfile containing destination directories.
-to_list: List containing dest. dirs. from to_text.
-SOURCE DIRECTORIES:
-from_text: Textfile containing source directories.
-from_list: List containing source directories from from_list.
-from_dirscan: List containing the names of all files scanned in the source directories.
