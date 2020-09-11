@@ -3,7 +3,7 @@ import shutil #will be used to move files
 
 #Tutorial is run based on the presence of newUser.txt in the program directory.
 def newUser():
-	os.system('TUTORIAL.py')
+	os.system('setup.py')
 	os.remove('newUser.txt')
 	quit()
 
@@ -49,31 +49,18 @@ for tag in tag_list:
 
 def dsmove(): #Core of the program.
 	i = 0
-	for tag in tag_list: #Same process as earlier but ends with items being moved and confirmation
+	for tag in tag_list: #Same process as noCheck() but ends with items being moved and confirmation
 			for item in from_dirscan:
 				if item.name.startswith(tag_list[i]):
 					shutil.move(item, to_list[i] %(item.name))
-					print(item.name, "has been moved to", to_list[i])
+					print(item.name, "has been moved to", to_list[i] %(item.name))
 			i += 1
 
-print(len(move_list), "tagged items have been found.") #User gets a chance to review results before moving files.
-if input("Would you like to review a list of these? y/n:   ") == 'y':
-	for item in move_list:
-		print(item.name)
-	if input("Would you like to move these items? y/n:   ") == 'y':
-		dsmove()
+print(len(move_list), "tagged items have been found:") #User gets a chance to review results before moving files.
+for item in move_list:
+	print(item.name)
+if input("Would you like to move these items? y/n:   ") == 'y':
+	dsmove()
 else:
-	if input("Would you like to move these items? y/n:   ") == 'y':
-		dsmove()
+	quit() 
 	
-
-
-
-
-#hello plis this is tecnikil snitzil and i will do many tecnikil thingses yes yes like delete the internets and also many other thingses like install the program of making beautifuls with computers
-
-#The program checks all entries from the source directories for the user-defined tags.
-	#This check is repeated as many times as there are tags.
-	#An increment of 'i' makes the program check for the tag which is on the next line in sortTags.txt.
-	#For this to work properly, the list of tags and the list of sort directories must be in the same order.
-	#i.e.  Once found, tagged files are sent off to their respective directories, 
