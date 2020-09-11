@@ -1,68 +1,56 @@
-DESKTOPSORT v1.0 // 28.06.2020 
-DESKTOPSORT v2.0 // 04.09.2020
+DESKTOPSORT v2.0 // 11.09.2020 // By using DESKTOPSORT, you assume the responsibility for any loss of information. 
 
-DESKTOPSORT is an automatic file sorting program built in Python 3.8.2. 
+1.1 INTRODUCTION
+DESKTOPSORT is a lightweight file sorting program built in Python 3.8.2. 
 It relies on recognizing user-determined tags at the beginning of file names.
-For more information, visit https://github.com/GiorginoSerbuciano/DesktopSort (Clickable URL in README.txt)
+While it requires no Python experience to run, it helps to be familiar with the language for troubleshooting.
+Visit https://github.com/GiorginoSerbuciano/DesktopSort for version history.
 
-input('Press ENTER to begin the tutorial, or close this window to abandon the program... (You can read the instructions at any time in README.txt.)\n')
+1.2 SETUP
+First-time users will be automatically prompted with a wizard guiding them through the setup.
+To get started, run DesktopSort.py. 
+You can run this wizard at any time by executing setup.py.
 
-input('To get started, place the DESKTOPSORT folder anywhere on your computer.\n' 
-'Given that you are reading this, you have most likely done this already. Good work! :)\n'
-'Press ENTER to continue...\n')
+1.3 MAIN FUNCTIONALITY
+DESKTOPSORT is intended as a 'lite' file sorter which works in 4 main steps:
+1. Scans the source directories given in sourceDirs.txt, building a list of files in these directories.
+2. Reads the names of every file in the list, checking for the tags given in sortTags.txt, building a list of these.
+3. Prints the list of all tagged files found and asks for confirmation (see 'noCheck' below).
+4. Moves the tagged files to their respective directories given in sortDirs.txt.
 
-input('First, we have to point DESKTOPSORT to the directory/ies it should scan.\n' 
-'(No worries -- DS only runs locally, so none of your information is sent anywhere.)\n'
-'We can do this by entering the desired addresses in sourceDirs.txt, one per line.\n'
-'I recommend using this format: C:\\User\\Documents\\Desktop.\n'
-'You can have as many of these as you want.\n'
-'[!]\n'
-'DESKTOPSORT cannot tell a regular file apart from a vital system file, nor can it distinguish between a file and a directory.\n'
-'Point at it crucial directories at your risk!\n'
-'Press ENTER to continue to your text editor. When done, save and close the file, then return to this screen...\n')
-os.startfile('sourceDirs.txt')
-input('Now, indicate to DESKTOPSORT where it should send your files.\n'
-'Do this by typing in the addresses into sortDirs.txt, just like you did earlier.\n'
-'Press ENTER to continue to your text editor. When done, save and close the file, then return to this screen...\n')
-os.startfile('sortDirs.txt')
-input('Lastly, DESKTOPSORT needs to know what tags to look for.\n'
-'Type these in sortTags.txt, one per line.\n'
-'Good tags are uncommon combinations of letters, separated by a symbol (e.g. Vp_, Ojh!)\n'
-'Make sure that your tags do not contain any symbols that your file system does not allow as names (e.g. \ or /)\n'
-'[!]\n'
-'Because DESKTOPSORT is not very smart (yet), it needs to read the sorting directories and tags in the same order.\n'
-'For example, if you have tag "A_" on the first line of sortTags.txt, then the directory where you want files tagged "A_" to go to should be on line 1 of sortDirs.txt\n'
-'Furthermore, it can only handle one tag per directory; not more, not less!\n'
-'Press ENTER to continue to your text editor. When done, save and close the file, then return to this screen...\n')
-os.startfile('sortTags.txt')
-input('Congratulations! If everything went well, DESKTOPSORT should now be ready to operate!\n'
-'To sort items on your computer, add your tags to the names of files according to your needs.\n'
-'Opening DESKTOPSORT.py will run the script which moves files to their right places.\n'
-'Next time you run it, you will not be met with this tutorial any more.\n\n'
-'Thanks for using DESKTOPSORT! Hope it serves you well. I would be very glad to hear from you on GitHub!\n'
-'~GiorginoSerbuciano\n'
-'Press ENTER to end the tutorial...')
+1.3.1 noCheck mode
+noCheck is a protocol which allows DESKTOPSORT to operate without interfacing with the user.
+This means that users will not be prompted with a list of tagged items and a confirmation before moving when noCheck is on.
+This could be considered an 'automatic', faster mode of operation.
+noCheck is enabled when noCheck.txt is present in the program directory.
+To enable it, the user may create a new text file called 'noCheck.txt', or remove the '!' from the pre-existing one.
+To disable it, simply delete or change the name of 'noCheck.txt'.
 
+1.4 LIMITATIONS
+While it has the capacity to handle volumes of files as great as any other program, it lacks the features of more 'serious' software.
 
-DESKTOPSORT 2020 DEVELOPED FOR EDUCATIONAL PURPOSES AT HAMBURG MEDIA SCHOOL
+1.4.1 Recommendations
+* Operating systems usually disallow '< > : " / \ | ? *' as filename characters. Therefore, avoid using these in your tags. Please note that tags are case-sensitive.
+* Using common combinations of letters and symbols as tags (e.g. "do") may result in unwanted displacements of files (e.g. "door.txt").
+* Preferably separate tag and name by a symbol (e.g. "A_")!
 
-CAUTIONS:
-* Choose tags which are not common combinations of letters and symbols. If you use e.g. "do" as a tag, any items whose names contain it, such as "door.txt" or "Windows" will be moved by accident. Tags such as "1_" or "AB!" should not cause this program.
-* USE THIS PROGRAM WITH CARE, pointing it only at directories where you are sure no important files will be lost, as it has no failsafe for displacing system files, nor for overwriting files. 
-* Tags are case sensitive.
+1.4.2 Long-term limitations
+* Can only read sortDirs.txt and sortTags.txt from top to bottom and line-by-line. 
+In other words, it reads the sorting directories and tags in the same, corresponding order. 
+For the user, this means that if tag "A_" is on the first line of sortTags.txt, then the directory corresponding to tag "A_" must be on the first line of sortDirs.txt. 
+Futhermore, there must be one tag per sorting directory (Source directories do not have this limitation!)
+DESKTOPSORT has no fancy failsafe against accidentally swapping the order of tags and directories.
+These are limitations inherent to the way the program is designed and may be fixed in major versions.
 
-LIMITATIONS as of v1.0:
-* Number of tags and sorting directories is currently limited to TWO.
-* The program must be run every time the user wishes to sort their files.
-* There is no interface.
+1.4.3 Short-term limitations
+* Cannot tell a regular file apart from a vital system file, nor can it distinguish between a file and a directory. Point it only at non-crucial directories and tag only non-crucial files.
+* No failsafe against overwriting files with the same name and of any type. 
+These limitations will be overcome in subsequent minor versions.
 
-NOTES ON PROGRAM VARIABLES:
-tag_text: Textfile containing tags
-tag_list: List containing tags from tag_text
-DESTINATION DIRECTORIES:
-to_text: Textfile containing destination directories.
-to_list: List containing dest. dirs. from to_text.
-SOURCE DIRECTORIES:
-from_text: Textfile containing source directories.
-from_list: List containing source directories from from_list.
-from_dirscan: List containing the names of all files scanned in the source directories.
+1.5 KNOWN BUGS:
+None as of v2.0 (11.09.2020)
+
+1.6 PRIVACY NOTE
+DESKTOPSORT does not send or store information about your computer or any files processed by the program during its operation.
+
+~DESKTOPSORT 2020 DEVELOPED FOR EDUCATIONAL PURPOSES AT HAMBURG MEDIA SCHOOL BY GORGA ȘERBAN-AURELIAN~
