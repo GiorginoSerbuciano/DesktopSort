@@ -8,8 +8,7 @@ print('DESKTOPSORT is an automatic file sorting program built in Python 3.8.2.\n
 
 print('DESKTOPSORT 2020 DEVELOPED FOR EDUCATIONAL PURPOSES AT HAMBURG MEDIA SCHOOL\n')
 
-if input('Begin setup? y/n:   ') == 'n':
-    quit()
+input('Press ENTER to begin the tutorial, or close this window to abandon the program... (You can read the instructions at any time in README.txt.)\n')
 
 input('\nTo get started, place the DESKTOPSORT folder anywhere on your computer.\n' 
 'Given that you are reading this, you have most likely done this already. Good work! :)\n'

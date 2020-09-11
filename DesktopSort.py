@@ -1,11 +1,11 @@
 import os #for various file manipulation methods
 import shutil #will be used to move files
 
-#Tutorial is run based on the presence of newUser.txt in the program directory.
+#Tutorial is run if newUser.txt is in the program directory.
 def newUser():
 	os.system('setup.py')
 	os.remove('newUser.txt')
-	os.system('DesktopSort.py')
+	quit()
 
 if os.path.isfile('newUser.txt'):
 	newUser()
