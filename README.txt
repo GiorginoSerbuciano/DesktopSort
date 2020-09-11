@@ -48,7 +48,7 @@ These are limitations inherent to the way the program is designed and may be fix
 These limitations will be overcome in subsequent minor versions.
 
 1.5 KNOWN BUGS:
-None as of v2.0 (11.09.2020)
+11.09.2020 (v2.0), when DesktopSort.py is run after setup.py, confirmation dialogue appears twice. Move functionality appears to work as normal.
 
 1.6 PRIVACY NOTE
 DESKTOPSORT does not send or store information about your computer or any files processed by the program during its operation.

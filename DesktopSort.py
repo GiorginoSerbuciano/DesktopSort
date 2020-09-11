@@ -5,7 +5,7 @@ import shutil #will be used to move files
 def newUser():
 	os.system('setup.py')
 	os.remove('newUser.txt')
-	quit()
+	os.system('DesktopSort.py')
 
 if os.path.isfile('newUser.txt'):
 	newUser()

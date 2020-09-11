@@ -1,6 +1,6 @@
 import os
 
-print('DESKTOPSORT v1.0 - 28.06.2020\nDESKTOPSORT v2.0 - 04.09.2020')   
+print('DESKTOPSORT v2.0 - 04.09.2020')   
 
 print('DESKTOPSORT is an automatic file sorting program built in Python 3.8.2.\n'
 'It relies on recognizing user-determined tags at the beginning of file names.\n'
@@ -8,9 +8,10 @@ print('DESKTOPSORT is an automatic file sorting program built in Python 3.8.2.\n
 
 print('DESKTOPSORT 2020 DEVELOPED FOR EDUCATIONAL PURPOSES AT HAMBURG MEDIA SCHOOL\n')
 
-input('Press ENTER to begin the tutorial, or close this window to abandon the program... (You can read the instructions at any time in README.txt.)\n')
+if input('Begin setup? y/n:   ') == 'n':
+    quit()
 
-input('To get started, place the DESKTOPSORT folder anywhere on your computer.\n' 
+input('\nTo get started, place the DESKTOPSORT folder anywhere on your computer.\n' 
 'Given that you are reading this, you have most likely done this already. Good work! :)\n'
 'Press ENTER to continue...\n')
 
