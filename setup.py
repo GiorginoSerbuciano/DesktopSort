@@ -17,7 +17,6 @@ input('\nTo get started, place the DESKTOPSORT folder anywhere on your computer.
 input('First, we have to point DESKTOPSORT to the directory/ies it should scan.\n' 
 '(No worries -- DS only runs locally, so none of your information is sent anywhere.)\n'
 'We can do this by entering the desired addresses in sourceDirs.txt, one per line.\n'
-'I recommend using this format: C:\\User\\Documents\\Desktop.\n'
 'You can have as many of these as you want.\n'
 '[!]\n'
 'DESKTOPSORT cannot tell a regular file apart from a vital system file, nor can it distinguish between a file and a directory.\n'

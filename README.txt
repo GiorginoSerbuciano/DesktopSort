@@ -4,7 +4,7 @@ DESKTOPSORT v2.0 // 11.09.2020 // By using DESKTOPSORT, you assume the responsib
 DESKTOPSORT is a lightweight file sorting program built in Python 3.8.2. 
 It relies on recognizing user-determined tags at the beginning of file names.
 While it requires no Python experience to run, it helps to be familiar with the language for troubleshooting.
-Visit https://github.com/GiorginoSerbuciano/DesktopSort for version history.
+Visit https://github.com/GiorginoSerbuciano/DesktopSort for version history & feedback.
 
 1.2 SETUP
 First-time users will be automatically prompted with a wizard guiding them through the setup.
@@ -23,7 +23,7 @@ noCheck is a protocol which allows DESKTOPSORT to operate without interfacing wi
 This means that users will not be prompted with a list of tagged items and a confirmation before moving when noCheck is on.
 This could be considered an 'automatic', faster mode of operation.
 noCheck is enabled when noCheck.txt is present in the program directory.
-To enable it, the user may create a new text file called 'noCheck.txt', or remove the '!' from the pre-existing one.
+To enable it, the user may create a new text file called 'noCheck.txt'.
 To disable it, simply delete or change the name of 'noCheck.txt'.
 
 1.4 LIMITATIONS
@@ -38,7 +38,7 @@ While it has the capacity to handle volumes of files as great as any other progr
 * Can only read sortDirs.txt and sortTags.txt from top to bottom and line-by-line. 
 In other words, it reads the sorting directories and tags in the same, corresponding order. 
 For the user, this means that if tag "A_" is on the first line of sortTags.txt, then the directory corresponding to tag "A_" must be on the first line of sortDirs.txt. 
-Futhermore, there must be one tag per sorting directory (Source directories do not have this limitation!)
+Therefore, there can only be one tag per sorting directory (Source directories do not have this limitation!)
 DESKTOPSORT has no fancy failsafe against accidentally swapping the order of tags and directories.
 These are limitations inherent to the way the program is designed and may be fixed in major versions.
 
@@ -48,7 +48,7 @@ These are limitations inherent to the way the program is designed and may be fix
 These limitations will be overcome in subsequent minor versions.
 
 1.5 KNOWN BUGS:
-11.09.2020 (v2.0), when DesktopSort.py is run after setup.py, confirmation dialogue appears twice. Move functionality appears to work as normal.
+[FIXED] 11.09.2020 (v2.0), when DesktopSort.py is run after setup.py, confirmation dialogue appears twice. Move functionality appears to work as normal.
 
 1.6 PRIVACY NOTE
 DESKTOPSORT does not send or store information about your computer or any files processed by the program during its operation.
